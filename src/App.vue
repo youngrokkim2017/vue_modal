@@ -2,7 +2,7 @@
   <h1>{{ title }}</h1>
   <!-- <input type="text" ref="name"> -->
   <!-- <button @click="handleClick">click me</button> -->
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale" /> <!-- : data binds the props to use variables -->
 </template>
 
 <script>
@@ -15,17 +15,19 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: 'my first vue app'
+      title: 'my first vue app',
+      header: 'vue props header',
+      text: 'add some text props',
     }
   },
-  methods: {
-    // handleClick() {
-    //   // use refs to get dom elements
-    //   // console.log(this.$refs.name)
-    //   // this.$refs.name.classList.add('active')
-    //   this.$refs.name.focus()
-    // }
-  }
+  // methods: {
+  //   // handleClick() {
+  //   //   // use refs to get dom elements
+  //   //   // console.log(this.$refs.name)
+  //   //   // this.$refs.name.classList.add('active')
+  //   //   this.$refs.name.focus()
+  //   // }
+  // }
 }
 </script>
 
