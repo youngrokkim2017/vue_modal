@@ -4,7 +4,17 @@
   <!-- <input type="text" ref="name"> -->
   <!-- <button @click="handleClick">click me</button> -->
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" /> <!-- : data binds the props to use variables -->
+    <!-- <Modal :header="header" :text="text" theme="sale" @close="toggleModal" /> : data binds the props to use variables -->
+    <Modal theme="sale" @close="toggleModal"> <!-- : data binds the props to use variables -->
+      <!-- Add a name slot template -->
+      <template v-slot:links>
+        <a href="#">sign up</a>
+        <a href="#">more info</a>
+      </template>
+      <!-- Add a default slot template -->
+      <h1>Slot modal header</h1>
+      <p>slot modal text</p>
+    </Modal>
   </div>
   <button @click.alt="toggleModal"> <!-- to add modifier .modifier -->
     open modal (alt)  
