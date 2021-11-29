@@ -1,8 +1,14 @@
 <template>
   <h1>{{ title }}</h1>
+  <p>Welcome...</p>
   <!-- <input type="text" ref="name"> -->
   <!-- <button @click="handleClick">click me</button> -->
-  <Modal :header="header" :text="text" theme="sale" /> <!-- : data binds the props to use variables -->
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" /> <!-- : data binds the props to use variables -->
+  </div>
+  <button @click="toggleModal">
+    open modal  
+  </button>
 </template>
 
 <script>
@@ -18,6 +24,7 @@ export default {
       title: 'my first vue app',
       header: 'vue props header',
       text: 'add some text props',
+      showModal: false,
     }
   },
   // methods: {
@@ -28,6 +35,11 @@ export default {
   //   //   this.$refs.name.focus()
   //   // }
   // }
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal
+    }
+  }
 }
 </script>
 
