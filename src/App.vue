@@ -6,8 +6,8 @@
   <div v-if="showModal">
     <Modal :header="header" :text="text" theme="sale" @close="toggleModal" /> <!-- : data binds the props to use variables -->
   </div>
-  <button @click="toggleModal">
-    open modal  
+  <button @click.alt="toggleModal"> <!-- to add modifier .modifier -->
+    open modal (alt)  
   </button>
 </template>
 
