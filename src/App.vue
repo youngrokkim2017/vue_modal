@@ -3,7 +3,7 @@
   <p>Welcome...</p>
   <!-- <input type="text" ref="name"> -->
   <!-- <button @click="handleClick">click me</button> -->
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
     <!-- <Modal :header="header" :text="text" theme="sale" @close="toggleModal" /> : data binds the props to use variables -->
     <Modal theme="sale" @close="toggleModal"> <!-- : data binds the props to use variables -->
       <!-- Add a name slot template -->
@@ -15,7 +15,7 @@
       <h1>Slot modal header</h1>
       <p>slot modal text</p>
     </Modal>
-  </div>
+  </teleport>
   <button @click.alt="toggleModal"> <!-- to add modifier .modifier -->
     open modal (alt)  
   </button>
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
